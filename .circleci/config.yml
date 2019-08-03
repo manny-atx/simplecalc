@@ -12,7 +12,7 @@ jobs:
       - checkout
       # Step 1.5 set env variable
       - run:
-          name: "Set up env"
+          name: Set up env
           command: |
             export PYTHONPATH=~/repo 
             env
