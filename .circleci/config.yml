@@ -15,6 +15,7 @@ jobs:
           name: "Set up env"
           command: |
             export PYTHONPATH=~/repo 
+            env
       # Step 2: create virtual env and install dependencies
       - run:
           name: install dependencies
