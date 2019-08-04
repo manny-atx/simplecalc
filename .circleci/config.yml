@@ -10,12 +10,6 @@ jobs:
     steps:
       # Step 1: obtain repo from GitHub
       - checkout
-      # Step 1.5 set env variable
-      - run:
-          name: Set up env
-          command: |
-            export PYTHONPATH=~/repo 
-            env
       # Step 2: create virtual env and install dependencies
       - run:
           name: install dependencies
@@ -28,7 +22,6 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pwd
-            ls $(pwd)
+            export PYTHONPATH=~/repo
             flake8 --exclude=venv* --statistics
             pytest -v --cov=calculator
